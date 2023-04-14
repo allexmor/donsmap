@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=997107f4-c184-4030-940b-60f54477f122&lang=ru_RU"
+        type="text/javascript">
+        </script>
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <section class="map">
+        <div id="map"></div>
+        <div class="legend">
+            <div class="legend__top">
+                <svg width="99" height="24" viewBox="0 0 99 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M96.012 23.6097H92.376C91.94 23.6269 91.5052 23.554 91.0987 23.3955C90.6922 23.2369 90.3227 22.9962 90.0132 22.6883C89.7038 22.3804 89.461 22.012 89.3002 21.606C89.1393 21.2 89.0638 20.7652 89.0783 20.3286V5.12876H91.6113V19.0951C91.6113 19.7725 91.7094 20.4615 92.1415 20.7085C92.5481 20.8548 92.9823 20.9074 93.4119 20.8624H95.7335V5.12876H98.2643V23.6097H96.012ZM96.0582 2.75337L94.8014 2.79165H92.5823L91.3328 2.75987C91.289 2.7445 91.2428 2.73716 91.1964 2.7382C89.9938 2.60387 90.1287 1.24176 90.1287 0.433594H97.2153C97.2168 1.26343 97.299 2.62915 96.0582 2.75337ZM82.7485 23.6097H79.6911C79.2557 23.6264 78.8215 23.5532 78.4156 23.3946C78.0098 23.236 77.6408 22.9955 77.3318 22.6879C77.0228 22.3804 76.7803 22.0125 76.6195 21.6071C76.4587 21.2017 76.383 20.7675 76.3971 20.3315V8.42498C76.3828 7.9889 76.4584 7.55454 76.6191 7.14897C76.7798 6.7434 77.0222 6.37531 77.3313 6.06763C77.6403 5.75996 78.0093 5.51929 78.4153 5.36062C78.8213 5.20195 79.2556 5.12868 79.6911 5.14537H82.7485C83.1842 5.12847 83.6186 5.20159 84.0248 5.36017C84.431 5.51875 84.8001 5.75939 85.1093 6.06709C85.4185 6.37479 85.6611 6.74295 85.8219 7.14862C85.9827 7.55429 86.0583 7.98877 86.044 8.42498V20.3323C86.058 20.7683 85.9822 21.2025 85.8212 21.608C85.6603 22.0134 85.4177 22.3813 85.1085 22.6887C84.7994 22.9962 84.4303 23.2366 84.0243 23.3951C83.6182 23.5535 83.184 23.6266 82.7485 23.6097ZM83.5132 9.63904C83.5132 8.96304 83.4151 8.27332 82.983 8.02632C82.5756 7.88066 82.1406 7.82858 81.7104 7.87393H80.7292C80.2995 7.8286 79.865 7.88069 79.4581 8.02632C79.0252 8.27332 78.9278 8.96521 78.9278 9.63904V19.0908C78.9278 19.7675 79.0245 20.4565 79.4581 20.7042C79.8654 20.8484 80.2995 20.9002 80.7292 20.8559H81.7104C82.1406 20.9002 82.5752 20.8484 82.983 20.7042C83.4158 20.4565 83.5132 19.7653 83.5132 19.0908V9.63904ZM70.3587 16.1268H67.0041V23.6104H64.4718V5.14393H70.3587C70.7943 5.12713 71.2287 5.20032 71.6347 5.35895C72.0408 5.51757 72.4099 5.75823 72.719 6.06592C73.0281 6.3736 73.2706 6.74173 73.4314 7.14735C73.5922 7.55297 73.6678 7.98739 73.6535 8.42354V12.8464C73.6679 13.2826 73.5923 13.7171 73.4316 14.1228C73.2709 14.5285 73.0284 14.8968 72.7193 15.2045C72.4102 15.5123 72.0411 15.753 71.6349 15.9117C71.2288 16.0703 70.7943 16.1436 70.3587 16.1268ZM71.1213 9.6412C71.1213 8.96304 71.0224 8.27404 70.5925 8.02848C70.186 7.88179 69.7517 7.8292 69.322 7.87465H67.0041V13.391H69.3198C69.7502 13.4363 70.1851 13.3839 70.5925 13.2379C71.0253 12.9923 71.1213 12.3026 71.1213 11.628V9.64193V9.6412ZM58.5799 23.6104H56.0463V7.87393H52.7183V5.12948H61.9086V7.87393H58.5799V23.6097V23.6104ZM47.6662 23.6104H45.1008C44.6654 23.627 44.2313 23.5537 43.8255 23.3951C43.4197 23.2364 43.0509 22.9959 42.7419 22.6884C42.433 22.3809 42.1906 22.013 42.0298 21.6076C41.8691 21.2023 41.7934 20.7682 41.8075 20.3323V8.42859C41.7935 7.99275 41.8693 7.55869 42.0301 7.15343C42.1909 6.74817 42.4333 6.38038 42.7422 6.07295C43.0511 5.76552 43.4199 5.52503 43.8257 5.36644C44.2315 5.20786 44.6655 5.13457 45.1008 5.15115H47.6662C48.1014 5.13457 48.5355 5.20786 48.9412 5.36644C49.347 5.52503 49.7158 5.76552 50.0247 6.07295C50.3337 6.38038 50.5761 6.74817 50.7369 7.15343C50.8977 7.55869 50.9735 7.99275 50.9595 8.42859V9.96909H48.4294V9.63904C48.4294 8.96232 48.3292 8.27332 47.8999 8.02632C47.4933 7.88134 47.0594 7.82951 46.6302 7.87465H46.1375C45.7085 7.82942 45.2748 7.88125 44.8685 8.02632C44.4356 8.27332 44.3397 8.96521 44.3397 9.63904V19.0922C44.3397 19.7689 44.4349 20.4572 44.8685 20.7049C45.2751 20.8487 45.7085 20.9003 46.1375 20.8559H46.6302C47.0594 20.9002 47.493 20.8486 47.8999 20.7049C48.3328 20.4572 48.4294 19.766 48.4294 19.0922V18.7853H50.9595V20.3315C50.9736 20.7674 50.8979 21.2016 50.7371 21.6069C50.5763 22.0123 50.3339 22.3802 50.025 22.6877C49.7161 22.9952 49.3472 23.2357 48.9414 23.3944C48.5356 23.553 48.1015 23.6263 47.6662 23.6097V23.6104ZM35.7987 16.0372H31.6865V23.5794H29.1384V5.12587H31.6865V13.287H35.7987V5.12587H38.3294V23.5786H35.7987V16.0365V16.0372ZM22.3613 23.6104H19.3025C18.8671 23.627 18.4331 23.5537 18.0272 23.3951C17.6214 23.2364 17.2526 22.9959 16.9437 22.6884C16.6347 22.3809 16.3923 22.013 16.2316 21.6076C16.0708 21.2023 15.9951 20.7682 16.0092 20.3323V8.42498C15.9949 7.98896 16.0704 7.55466 16.2311 7.14915C16.3918 6.74363 16.6342 6.37557 16.9431 6.06791C17.2521 5.76024 17.621 5.51955 18.0269 5.36084C18.4328 5.20212 18.867 5.12878 19.3025 5.14537H22.3613C22.797 5.12847 23.2314 5.20159 23.6376 5.36017C24.0438 5.51875 24.413 5.75939 24.7221 6.06709C25.0313 6.37479 25.2739 6.74295 25.4347 7.14862C25.5955 7.55429 25.6711 7.98877 25.6568 8.42498V20.3323C25.6708 20.7683 25.595 21.2025 25.434 21.608C25.2731 22.0134 25.0305 22.3813 24.7213 22.6887C24.4122 22.9962 24.0431 23.2366 23.6371 23.3951C23.2311 23.5535 22.7968 23.6266 22.3613 23.6097V23.6104ZM23.1253 9.6412C23.1253 8.96304 23.0265 8.27404 22.5951 8.02848C22.1886 7.88184 21.7543 7.82925 21.3246 7.87465H20.332C19.9023 7.82917 19.468 7.88177 19.0615 8.02848C18.6287 8.27404 18.5313 8.96304 18.5313 9.6412V19.0908C18.5313 19.7682 18.6287 20.4572 19.0615 20.7035C19.4683 20.8486 19.9024 20.9009 20.332 20.8566H21.3246C21.7542 20.9009 22.1883 20.8486 22.5951 20.7035C23.0279 20.4572 23.1253 19.7646 23.1253 19.0908V9.64048V9.6412ZM2.77167 20.8631H2.9477V8.41054C2.93307 7.9739 3.00854 7.53892 3.16939 7.13279C3.33024 6.72666 3.57301 6.3581 3.88255 6.05012C4.19208 5.74214 4.56173 5.50137 4.96839 5.34284C5.37506 5.18431 5.81001 5.11144 6.24607 5.12876H12.1351V20.8624H12.3342C13.9307 20.8624 14.6832 22.0815 14.6507 23.6068H0.453721C0.421978 22.0815 1.17515 20.8624 2.77167 20.8624V20.8631ZM5.47198 20.8631H9.60071V7.87393H7.27194C6.84193 7.82817 6.40715 7.88026 6.00006 8.02632C5.56721 8.27332 5.46981 8.96521 5.46981 9.64048V20.8624L5.47198 20.8631Z"
+                        fill="#35B8FC" />
+                </svg>
+                <div class="legend__top-project">
+                    Событие
+                </div>
+            </div>
+            <div class="legend__dropdown">
+                <div class="dropdown__category-active">Назначение от Донстрой</div>
+                <div class="dropdown__categories">
+                    <div class="dropdown__category">Интересы клиента</div>
+                    <div class="dropdown__category">Текущий бизнес</div>
+                    <div class="dropdown__category">Все</div>
+                </div>
+            </div>
+            <div class="legend__list">
+                <div class="legend__item">
+                    <div class="legend__item-left legend__item--cafe">
+                        <div class="legend__icon"></div>Кафе
+                    </div>
+                    <div class="legend__item-right">
+                        <div class="legend__item-count">6</div>
+                    </div>
+                </div>
+                <div class="legend__item ">
+                    <div class="legend__item-left legend__item--coffeehouse">
+                        <div class="legend__icon"></div>Кофейня
+                    </div>
+                    <div class="legend__item-right">
+                        <div class="legend__item-count">3</div>
+                    </div>
+                </div>
+                <div class="legend__item legend__item--restaurant active">
+                    <div class="legend__item-left">
+                        <div class="legend__icon"></div>
+                        Ресторан
+                    </div>
+                    <div class="legend__item-right">
+                        <div class="legend__item-count">1</div>
+                        <!-- <div class="legend__item-close"></div> -->
+                    </div>
+                </div>
+                <div class="legend__item legend__item--bakery active">
+                    <div class="legend__item-left">
+                        <div class="legend__icon"></div>Пекарня
+                    </div>
+                    <div class="legend__item-right">
+                        <div class="legend__item-count">6</div>
+                        <!-- <div class="legend__item-close"></div> -->
+                    </div>
+                </div>
+                <div class="legend__item legend__item--supermarket">
+                    <div class="legend__item-left">
+                        <div class="legend__icon"></div>Супермаркет
+                    </div>
+                    <div class="legend__item-right">
+                        <div class="legend__item-count">7</div>
+                    </div>
+                </div>
+                <div class="legend__item legend__item--shop active">
+                    <div class="legend__item-left">
+                        <div class="legend__icon"></div>Магазин
+                    </div>
+                    <div class="legend__item-right">
+                        <div class="legend__item-count">10</div>
+                        <!-- <div class="legend__item-close"></div> -->
+                    </div>
+                </div>
+                <div class="legend__item legend__item--shoppingroom">
+                    <div class="legend__item-left">
+                        <div class="legend__icon"></div>Торговый зал
+                    </div>
+                    <div class="legend__item-right">
+                        <div class="legend__item-count">15</div>
+                    </div>
+                </div>
+                <div class="legend__item legend__item--office">
+                    <div class="legend__item-left">
+                        <div class="legend__icon"></div>Офис
+                    </div>
+                    <div class="legend__item-right">
+                        <div class="legend__item-count">6</div>
+                    </div>
+                </div>
+                <div class="legend__item legend__item--kindergarden">
+                    <div class="legend__item-left">
+                        <div class="legend__icon"></div>Детский сад
+                    </div>
+                    <div class="legend__item-right">
+                        <div class="legend__item-count">2</div>
+                    </div>
+                </div>
+                <div class="legend__item legend__item--school">
+                    <div class="legend__item-left">
+                        <div class="legend__icon"></div>Школа
+                    </div>
+                    <div class="legend__item-right">
+                        <div class="legend__item-count">1</div>
+                    </div>
+                </div>
+                <div class="legend__item legend__item--medicalcenter">
+                    <div class="legend__item-left">
+                        <div class="legend__icon"></div>Медцентр
+                    </div>
+                    <div class="legend__item-right">
+                        <div class="legend__item-count">6</div>
+                    </div>
+                </div>
+                <div class="legend__item legend__item--fitness">
+                    <div class="legend__item-left">
+                        <div class="legend__icon"></div>Фитнес
+                    </div>
+                    <div class="legend__item-right">
+                        <div class="legend__item-count">2</div>
+                    </div>
+                </div>
+                <div class="legend__item legend__item--carwash">
+                    <div class="legend__item-left">
+                        <div class="legend__icon"></div>Мойка
+                    </div>
+                    <div class="legend__item-right">
+                        <div class="legend__item-count">1</div>
+                    </div>
+                </div>
+            </div>
+            <div class="legend__clear"></div>
+        </div>
+    </section>
+
+</body>
+
+</html>
