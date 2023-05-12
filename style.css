@@ -227,6 +227,7 @@
 :root {
     --blue1: #36187D;
     --gray30: #D1D3DB;
+    --gray50: #8C90A4;
     --gray5: #F5F6FB;
     --white: #fff;
     --lighblue: #35B8FC;
@@ -262,7 +263,11 @@ body {
     position: absolute;
 
     display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    max-height: calc(100vh - 80px);
+    /* max-height: 926px; */
     grid-gap: 24px;
+
 
     padding: 32px;
     top: 20px;
@@ -289,6 +294,27 @@ body {
 
 .legend__dropdown {
     position: relative;
+}
+
+/* Firefox */
+.legend__list {
+    scrollbar-width: auto;
+    scrollbar-color: #000 #fff;
+}
+
+/* Chrome, Edge, and Safari */
+.legend__list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.legend__list::-webkit-scrollbar-track {
+    background: var(--gray5);
+}
+
+.legend__list::-webkit-scrollbar-thumb {
+    background-color: #808080;
+    background-color: var(--lighblue);
+    border-radius: 4px;
 }
 
 .dropdown__category-active {
@@ -336,6 +362,10 @@ body {
 .legend__list {
     display: grid;
     grid-gap: 4px;
+    width: calc(100% + 12px);
+    padding-right: 12px;
+
+    overflow: auto;
 }
 
 .legend__item {
@@ -499,6 +529,35 @@ body {
     -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='20' height='21' viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17 18.9999H3V19.9999C3 20.2651 2.89464 20.5195 2.70711 20.707C2.51957 20.8946 2.26522 20.9999 2 20.9999H1C0.734784 20.9999 0.48043 20.8946 0.292893 20.707C0.105357 20.5195 0 20.2651 0 19.9999V12.9385C0 11.67 0.34471 10.4253 0.997286 9.33751L2.417 6.97093C2.59469 6.67478 2.84605 6.42968 3.1466 6.25952C3.44714 6.08936 3.78663 5.99993 4.132 5.99993H15.868C16.2134 5.99993 16.5529 6.08936 16.8534 6.25952C17.1539 6.42968 17.4053 6.67478 17.583 6.97093L19.0027 9.33751C19.6553 10.4253 20 11.67 20 12.9385V19.9999C20 20.2651 19.8946 20.5195 19.7071 20.707C19.5196 20.8946 19.2652 20.9999 19 20.9999H18C17.7348 20.9999 17.4804 20.8946 17.2929 20.707C17.1054 20.5195 17 20.2651 17 19.9999V18.9999ZM3.2407 9.48543C2.84078 10.152 3.3209 10.9999 4.09819 10.9999H15.9018C16.6791 10.9999 17.1592 10.152 16.7593 9.48543L16.1593 8.48543C15.9786 8.18423 15.6531 7.99993 15.3018 7.99993H4.69819C4.34693 7.99993 4.02142 8.18423 3.8407 8.48543L3.2407 9.48543ZM4.5 15.9999C4.89782 15.9999 5.27936 15.8419 5.56066 15.5606C5.84196 15.2793 6 14.8978 6 14.4999C6 14.1021 5.84196 13.7206 5.56066 13.4393C5.27936 13.158 4.89782 12.9999 4.5 12.9999C4.10218 12.9999 3.72064 13.158 3.43934 13.4393C3.15804 13.7206 3 14.1021 3 14.4999C3 14.8978 3.15804 15.2793 3.43934 15.5606C3.72064 15.8419 4.10218 15.9999 4.5 15.9999ZM15.5 15.9999C15.8978 15.9999 16.2794 15.8419 16.5607 15.5606C16.842 15.2793 17 14.8978 17 14.4999C17 14.1021 16.842 13.7206 16.5607 13.4393C16.2794 13.158 15.8978 12.9999 15.5 12.9999C15.1022 12.9999 14.7206 13.158 14.4393 13.4393C14.158 13.7206 14 14.1021 14 14.4999C14 14.8978 14.158 15.2793 14.4393 15.5606C14.7206 15.8419 15.1022 15.9999 15.5 15.9999ZM3.44 1.43993L4.5 0.37793L5.56 1.43793C5.76982 1.64769 5.91273 1.91496 5.97064 2.20595C6.02856 2.49693 5.99888 2.79856 5.88536 3.07267C5.77184 3.34679 5.57959 3.58108 5.3329 3.74592C5.08622 3.91076 4.79619 3.99875 4.4995 3.99875C4.20281 3.99875 3.91278 3.91076 3.6661 3.74592C3.41941 3.58108 3.22716 3.34679 3.11364 3.07267C3.00012 2.79856 2.97044 2.49693 3.02836 2.20595C3.08627 1.91496 3.22918 1.64769 3.439 1.43793L3.44 1.43993ZM8.94 1.43993L10 0.37793L11.06 1.43793C11.2698 1.64769 11.4127 1.91496 11.4706 2.20595C11.5286 2.49693 11.4989 2.79856 11.3854 3.07267C11.2718 3.34679 11.0796 3.58108 10.8329 3.74592C10.5862 3.91076 10.2962 3.99875 9.9995 3.99875C9.70281 3.99875 9.41278 3.91076 9.1661 3.74592C8.91941 3.58108 8.72715 3.34679 8.61364 3.07267C8.50012 2.79856 8.47044 2.49693 8.52836 2.20595C8.58627 1.91496 8.72918 1.64769 8.939 1.43793L8.94 1.43993ZM14.44 1.43993L15.5 0.37893L16.56 1.43893C16.7698 1.64869 16.9127 1.91596 16.9706 2.20695C17.0286 2.49793 16.9989 2.79956 16.8854 3.07367C16.7718 3.34779 16.5796 3.58208 16.3329 3.74692C16.0862 3.91176 15.7962 3.99975 15.4995 3.99975C15.2028 3.99975 14.9128 3.91176 14.6661 3.74692C14.4194 3.58208 14.2272 3.34779 14.1136 3.07367C14.0001 2.79956 13.9704 2.49793 14.0284 2.20695C14.0863 1.91596 14.2292 1.64869 14.439 1.43893L14.44 1.43993Z' fill='currentColor'/%3E%3C/svg%3E%0A");
 }
 
+.legend__clear {
+    position: relative;
+    padding-left: 30px;
+
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 22px;
+
+    color: #36187D;
+    cursor: pointer;
+}
+
+.legend__clear::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    height: 20px;
+    width: 20px;
+
+    mask-image: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.9558 0.0684524C8.70181 -0.161414 10.4749 0.191271 12 1.07181C13.5251 1.95235 14.7171 3.31152 15.391 4.93854C16.065 6.56556 16.1832 8.3695 15.7274 10.0706C15.2716 11.7716 14.2673 13.2748 12.8701 14.3468C11.5801 15.3367 10.0217 15.908 8.40411 15.9898L10.7072 18.2928L9.29294 19.7071L4.58583 15L9.29294 10.2928L10.7072 11.7071L8.42959 13.9846C9.59742 13.9008 10.7187 13.4767 11.6526 12.7601C12.7004 11.9561 13.4537 10.8287 13.7956 9.55293C14.1374 8.27713 14.0487 6.92418 13.5433 5.70391C13.0378 4.48365 12.1439 3.46426 11 2.80386C9.85616 2.14346 8.52636 1.87894 7.21685 2.05134C5.90735 2.22374 4.69132 2.82342 3.75737 3.75737C2.82342 4.69132 2.22374 5.90735 2.05134 7.21685C1.87894 8.52636 2.14346 9.85616 2.80386 11C3.08 11.4783 2.91613 12.0899 2.43783 12.366C1.95954 12.6422 1.34795 12.4783 1.07181 12C0.191272 10.4749 -0.161414 8.70181 0.0684527 6.9558C0.298319 5.20979 1.09789 3.58842 2.34316 2.34316C3.58842 1.09789 5.20979 0.298319 6.9558 0.0684524Z' fill='currentColor'/%3E%3C/svg%3E%0A");
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.9558 0.0684524C8.70181 -0.161414 10.4749 0.191271 12 1.07181C13.5251 1.95235 14.7171 3.31152 15.391 4.93854C16.065 6.56556 16.1832 8.3695 15.7274 10.0706C15.2716 11.7716 14.2673 13.2748 12.8701 14.3468C11.5801 15.3367 10.0217 15.908 8.40411 15.9898L10.7072 18.2928L9.29294 19.7071L4.58583 15L9.29294 10.2928L10.7072 11.7071L8.42959 13.9846C9.59742 13.9008 10.7187 13.4767 11.6526 12.7601C12.7004 11.9561 13.4537 10.8287 13.7956 9.55293C14.1374 8.27713 14.0487 6.92418 13.5433 5.70391C13.0378 4.48365 12.1439 3.46426 11 2.80386C9.85616 2.14346 8.52636 1.87894 7.21685 2.05134C5.90735 2.22374 4.69132 2.82342 3.75737 3.75737C2.82342 4.69132 2.22374 5.90735 2.05134 7.21685C1.87894 8.52636 2.14346 9.85616 2.80386 11C3.08 11.4783 2.91613 12.0899 2.43783 12.366C1.95954 12.6422 1.34795 12.4783 1.07181 12C0.191272 10.4749 -0.161414 8.70181 0.0684527 6.9558C0.298319 5.20979 1.09789 3.58842 2.34316 2.34316C3.58842 1.09789 5.20979 0.298319 6.9558 0.0684524Z' fill='currentColor'/%3E%3C/svg%3E%0A");
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+
+    background-color: #36187D;
+}
+
 .dropdown__categories {
     background-color: #f5f6fb;
     padding: 6px 0px;
@@ -529,10 +588,9 @@ body {
     pointer-events: all;
 }
 
-
-
 .ymaps__map-icon {
     background-size: contain;
+    border-radius: 50%;
 }
 
 .ymaps__map-icon {
@@ -556,11 +614,79 @@ body {
     -webkit-mask-position: center;
 }
 
+.ymaps__map-content-footer {
+    display: flex;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.ymaps__map-content-header--more {
+    padding: 15px 10px 6px;
+
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+    font-family: 'Gilroy';
+
+    color: var(--blue1);
+}
+
+ymaps[class*="-cluster-tabs__menu"] .ymaps__map-content-header--more {
+    font-size: 16px;
+    line-height: 22px;
+    padding: 5px 0px;
+}
+
+ymaps[class*="-tabs__content-item"] .ymaps__map-content-header--more {
+    font-size: 18px;
+    line-height: 24px;
+    padding-top: 6px;
+    background: #f5f6fb1f;
+    border: 1px solid #392f78;
+    border-radius: 4px;
+}
+
+ymaps[class*="-cluster-content__body"] .ymaps__map-content-body {}
+
+.ymaps__map-content-body {
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: var(--gray50);
+    font-family: 'Gilroy';
+}
+
+.ymaps__map-content-footer div {
+    font-family: 'Gilroy';
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 28px;
+}
+
+.ymaps__map-content-footer div:first-child {
+    padding-left: 10px;
+    color: var(--blue1);
+}
+
+.ymaps__map-content-footer div:last-child {
+    padding-right: 10px;
+    color: var(--lighblue);
+}
+
+ymaps[class*="-image-with-content"] {
+    background-image: none !important;
+}
+
 ymaps[class*="-balloon-overlay"] ymaps[class*="-balloon_layout_normal"] {
-    min-height: 56px;
+    /* min-height: 56px; */
     padding: 0px;
+    font-weight: 'Gilroy';
     left: 0px !important;
-    bottom: 40px !important;
+    bottom: 56px !important;
     transform: translateX(calc(-50% - 24px));
     box-shadow: none;
     top: initial !important;
@@ -594,4 +720,152 @@ ymaps[class*="-balloon__layout"] {
 
 ymaps[class*="-balloon-content__header"] {
     margin-bottom: 0px;
+}
+
+ymaps[class*="-balloon-content__footer"] {
+    margin-top: 7px;
+}
+
+.ymaps__map-icon--client {
+    background-color: #fff;
+    border: 2px solid currentColor;
+    box-shadow: 0px 0px 0px 0px;
+    color: currentColor;
+    transition: 0.2s;
+}
+
+.ymaps__map-icon--client.hover {
+    box-shadow: 0px 0px 0px 5px;
+}
+
+.ymaps__map-icon--client .ymaps__map-icon-container {
+    /* background-color: #808080; */
+}
+
+.color-office {
+    color: #F32EE0;
+}
+
+.color-office .ymaps__map-icon-container {
+    background-color: #F32EE0;
+}
+
+.color-carwash {
+    color: #7A27E2;
+}
+
+.color-carwash .ymaps__map-icon-container {
+    background-color: #7A27E2;
+}
+
+.color-kindergarden,
+.color-school {
+    color: #F54751;
+}
+
+.color-kindergarden .ymaps__map-icon-container,
+.color-school .ymaps__map-icon-container {
+    background-color: #F54751;
+}
+
+.color-medicalcenter,
+.color-fitness {
+    color: #11BC7E;
+}
+
+.color-medicalcenter .ymaps__map-icon-container,
+.color-fitness .ymaps__map-icon-container {
+    background-color: #11BC7E;
+}
+
+.color-cafe,
+.color-coffeehouse,
+.color-restaurant,
+.color-bakery {
+    color: #F87700;
+}
+
+.color-cafe .ymaps__map-icon-container,
+.color-coffeehouse .ymaps__map-icon-container,
+.color-restaurant .ymaps__map-icon-container,
+.color-bakery .ymaps__map-icon-container {
+    background-color: #F87700;
+}
+
+.color-supermarket,
+.color-shoppingroom {
+    color: #007AFF;
+}
+
+.color-supermarket .ymaps__map-icon-container,
+.color-shoppingroom .ymaps__map-icon-container {
+    background-color: #007AFF;
+}
+
+.ymaps__map--client-plans {
+    min-width: auto;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: center;
+    color: var(--brightblue);
+}
+
+.ymaps__map--business {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.ymaps__map-icon--cbusiness.color-office {
+    background-color: #F32EE0;
+    color: #fff;
+}
+
+.ymaps__map-icon--cbusiness.color-carwash {
+    background-color: #7A27E2;
+    color: #fff;
+}
+
+.ymaps__map-icon--cbusiness.color-office .ymaps__map-icon-container,
+.ymaps__map-icon--cbusiness.color-carwash .ymaps__map-icon-container,
+.ymaps__map-icon--cbusiness.color-kindergarden .ymaps__map-icon-container,
+.ymaps__map-icon--cbusiness.color-school .ymaps__map-icon-container,
+.ymaps__map-icon--cbusiness.color-medicalcenter .ymaps__map-icon-container,
+.ymaps__map-icon--cbusiness.color-fitness .ymaps__map-icon-container,
+.ymaps__map-icon--cbusiness.color-cafe .ymaps__map-icon-container,
+.ymaps__map-icon--cbusiness.color-coffeehouse .ymaps__map-icon-container,
+.ymaps__map-icon--cbusiness.color-restaurant .ymaps__map-icon-container,
+.ymaps__map-icon--cbusiness.color-bakery .ymaps__map-icon-container,
+.ymaps__map-icon--cbusiness.color-supermarket .ymaps__map-icon-container,
+.ymaps__map-icon--cbusiness.color-shoppingroom .ymaps__map-icon-container {
+    background-color: #fff;
+}
+
+.ymaps__map-icon--cbusiness.color-kindergarden,
+.ymaps__map-icon--cbusiness.color-school {
+    background-color: #F54751;
+    color: #fff;
+}
+
+.ymaps__map-icon--cbusiness.color-medicalcenter,
+.ymaps__map-icon--cbusiness.color-fitness {
+    background-color: #11BC7E;
+    color: #fff;
+}
+
+.ymaps__map-icon--cbusiness.color-cafe,
+.ymaps__map-icon--cbusiness.color-coffeehouse,
+.ymaps__map-icon--cbusiness.color-restaurant,
+.ymaps__map-icon--cbusiness.color-bakery {
+    background-color: #F87700;
+    color: #fff;
+}
+
+.ymaps__map-icon--cbusiness.color-supermarket,
+.ymaps__map-icon--cbusiness.color-shoppingroom {
+    background-color: #007AFF;
+    color: #fff;
 }

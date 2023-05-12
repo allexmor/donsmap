@@ -11,7 +11,6 @@
         type="text/javascript">
         </script>
     <script src="script.js"></script>
-
 </head>
 
 <body>
@@ -31,29 +30,30 @@
             <div class="legend__dropdown">
                 <div class="dropdown__category-active">Назначение от Донстрой</div>
                 <div class="dropdown__categories">
-                    <div class="dropdown__category">Интересы клиента</div>
-                    <div class="dropdown__category">Текущий бизнес</div>
-                    <div class="dropdown__category">Все</div>
+                    <div class="dropdown__category" data-utype="donstroy">Назначение от Донстрой</div>
+                    <div class="dropdown__category" data-utype="client">Интересы клиента</div>
+                    <div class="dropdown__category" data-utype="cbusiness">Текущий бизнес</div>
+                    <div class="dropdown__category" data-utype="all">Все</div>
                 </div>
             </div>
             <div class="legend__list">
-                <div class="legend__item">
-                    <div class="legend__item-left legend__item--cafe">
-                        <div class="legend__icon"></div>Кафе
+                <div class="legend__item legend__item--cafe" data-type="cafe">
+                    <div class="legend__item-left">
+                        <div class=" legend__icon"></div>Кафе
                     </div>
                     <div class="legend__item-right">
                         <div class="legend__item-count">6</div>
                     </div>
                 </div>
-                <div class="legend__item ">
-                    <div class="legend__item-left legend__item--coffeehouse">
-                        <div class="legend__icon"></div>Кофейня
+                <div class="legend__item legend__item--coffeehouse" data-type="coffeehouse">
+                    <div class="legend__item-left">
+                        <div class=" legend__icon"></div>Кофейня
                     </div>
                     <div class="legend__item-right">
                         <div class="legend__item-count">3</div>
                     </div>
                 </div>
-                <div class="legend__item legend__item--restaurant active">
+                <div class="legend__item legend__item--restaurant" data-type="restaurant">
                     <div class="legend__item-left">
                         <div class="legend__icon"></div>
                         Ресторан
@@ -63,8 +63,8 @@
                         <!-- <div class="legend__item-close"></div> -->
                     </div>
                 </div>
-                <div class="legend__item legend__item--bakery active">
-                    <div class="legend__item-left">
+                <div class="legend__item legend__item--bakery" data-type="bakery">
+                    <div class=" legend__item-left">
                         <div class="legend__icon"></div>Пекарня
                     </div>
                     <div class="legend__item-right">
@@ -72,16 +72,16 @@
                         <!-- <div class="legend__item-close"></div> -->
                     </div>
                 </div>
-                <div class="legend__item legend__item--supermarket">
-                    <div class="legend__item-left">
+                <div class="legend__item legend__item--supermarket" data-type="supermarket">
+                    <div class=" legend__item-left">
                         <div class="legend__icon"></div>Супермаркет
                     </div>
                     <div class="legend__item-right">
                         <div class="legend__item-count">7</div>
                     </div>
                 </div>
-                <div class="legend__item legend__item--shop active">
-                    <div class="legend__item-left">
+                <div class="legend__item legend__item--shop" data-type="shop">
+                    <div class=" legend__item-left">
                         <div class="legend__icon"></div>Магазин
                     </div>
                     <div class="legend__item-right">
@@ -89,56 +89,56 @@
                         <!-- <div class="legend__item-close"></div> -->
                     </div>
                 </div>
-                <div class="legend__item legend__item--shoppingroom">
-                    <div class="legend__item-left">
+                <div class="legend__item legend__item--shoppingroom" data-type="shoppingroom">
+                    <div class=" legend__item-left">
                         <div class="legend__icon"></div>Торговый зал
                     </div>
                     <div class="legend__item-right">
                         <div class="legend__item-count">15</div>
                     </div>
                 </div>
-                <div class="legend__item legend__item--office">
-                    <div class="legend__item-left">
+                <div class="legend__item legend__item--office" data-type="office">
+                    <div class=" legend__item-left">
                         <div class="legend__icon"></div>Офис
                     </div>
                     <div class="legend__item-right">
                         <div class="legend__item-count">6</div>
                     </div>
                 </div>
-                <div class="legend__item legend__item--kindergarden">
-                    <div class="legend__item-left">
+                <div class="legend__item legend__item--kindergarden" data-type="kindergarden">
+                    <div class=" legend__item-left">
                         <div class="legend__icon"></div>Детский сад
                     </div>
                     <div class="legend__item-right">
                         <div class="legend__item-count">2</div>
                     </div>
                 </div>
-                <div class="legend__item legend__item--school">
-                    <div class="legend__item-left">
+                <div class="legend__item legend__item--school" data-type="school">
+                    <div class=" legend__item-left">
                         <div class="legend__icon"></div>Школа
                     </div>
                     <div class="legend__item-right">
                         <div class="legend__item-count">1</div>
                     </div>
                 </div>
-                <div class="legend__item legend__item--medicalcenter">
-                    <div class="legend__item-left">
+                <div class="legend__item legend__item--medicalcenter" data-type="medicalcenter">
+                    <div class=" legend__item-left">
                         <div class="legend__icon"></div>Медцентр
                     </div>
                     <div class="legend__item-right">
                         <div class="legend__item-count">6</div>
                     </div>
                 </div>
-                <div class="legend__item legend__item--fitness">
-                    <div class="legend__item-left">
+                <div class="legend__item legend__item--fitness" data-type="fitness">
+                    <div class=" legend__item-left">
                         <div class="legend__icon"></div>Фитнес
                     </div>
                     <div class="legend__item-right">
                         <div class="legend__item-count">2</div>
                     </div>
                 </div>
-                <div class="legend__item legend__item--carwash">
-                    <div class="legend__item-left">
+                <div class="legend__item legend__item--carwash" data-type="carwash">
+                    <div class=" legend__item-left">
                         <div class="legend__icon"></div>Мойка
                     </div>
                     <div class="legend__item-right">
@@ -146,7 +146,7 @@
                     </div>
                 </div>
             </div>
-            <div class="legend__clear"></div>
+            <div class="legend__clear">Очистить фильтр</div>
         </div>
     </section>
 
